@@ -1,6 +1,22 @@
 DROP TABLE IF EXISTS Trains, Stations, Schedules, Conductors, PassengerSchedule, Passengers;
 
 
+Create Table PassengerSchedule 
+(
+    scheduleID varchar(6) Not Null,
+    passengerID varchar(6) Not Null,
+    PRIMARY Key(scheduleID,passengerID)
+);
+
+Create Table Conductors 
+(
+    conductorID VARCHAR(6) Not Null,
+    fullName VARCHAR(40) Not Null,
+    age INTEGER,
+    certificationLevel VARCHAR(40),
+    PRIMARY KEY(conductorID)
+);
+
 Create Table Trains
 (
     trainID VARCHAR(6) Not Null,
@@ -33,22 +49,6 @@ Create Table Passengers
     PRIMARY KEY(passengerID) 
 );
 
-
-Create Table PassengerSchedule 
-(
-    scheduleID varchar(6) Not Null,
-    passengerID varchar(6) Not Null,
-    PRIMARY Key(scheduleID,passengerID)
-);
-
-Create Table Conductors 
-(
-    conductorID VARCHAR(6) Not Null,
-    fullName VARCHAR(40) Not Null,
-    age INTEGER,
-    certificationLevel VARCHAR(40),
-    PRIMARY KEY(conductorID)
-);
 
 
 Create Table Schedules 
