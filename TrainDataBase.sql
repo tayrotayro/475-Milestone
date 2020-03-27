@@ -1,4 +1,4 @@
-ALTER TABLE Trains DROP DROP FOREIGN KEY FK_constr_1;
+ALTER TABLE Trains DROP DROP FOREIGN KEY FK_constr_1;git
 DROP TABLE IF EXISTS Trains, Stations, Schedules, Conductors, PassengerSchedule, Passengers;
 
 
@@ -24,8 +24,7 @@ Create Table Trains
     trainID VARCHAR(6) Not Null,
     scheduleID VARCHAR(6), 
     trainType VARCHAR(30), 
-    PRIMARY KEY (trainID),
-    CONSTRAINT FK_constr_1 FOREIGN KEY (scheduleID) REFERENCES Schedules(scheduleID)
+    PRIMARY KEY (trainID)
 );
 
 
@@ -71,3 +70,5 @@ Create Table Schedules
    -- CONSTRAINT FK_constr_9 FOREIGN KEY (passengerID) REFERENCES Passengers(passengerID)
 
 );
+
+ALTER TABLE Trains ADD FOREIGN KEY (scheduleID) REFERENCES Schedules(scheduleID);
